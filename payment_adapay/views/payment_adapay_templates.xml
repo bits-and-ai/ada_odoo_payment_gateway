@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="redirect_form" name="AdaPay Redirect Form">
+        <form t-att-action="checkout_url + '/' + uuid" method="get" id="o_payment_adapay_redirect_form">
+        </form>
+    </template>
+</odoo>
+

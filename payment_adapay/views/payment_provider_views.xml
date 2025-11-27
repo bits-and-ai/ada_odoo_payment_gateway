@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="payment_provider_form_adapayform" model="ir.ui.view">
+        <field name="name">AdaPay Provider Form</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <group name = "provider_credentials" position='inside'>
+                <group invisible="code != 'adapay'">
+                    <group string="Credentials">
+                        <field name="adapay_api_key" required="code == 'adapay' and state != 'disabled'"/>
+                        <field name="adapay_public_api_key"/>
+                        <field name="adapay_environment" required="code == 'adapay' and state != 'disabled'"/>
+                    </group>
+                    <group string="API Configuration">
+                        <field name="adapay_checkout_api_url_test" required="code == 'adapay' and state != 'disabled'"/>
+                        <field name="adapay_checkout_api_url_main" required="code == 'adapay' and state != 'disabled'"/>
+                        <field name="adapay_payment_initiate_endpoint" required="code == 'adapay' and state != 'disabled'"/>
+                    </group>
+                </group>
+            </group>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="payment_adapay.payment_provider_adapay" model="payment.provider">
+            <field name="name">AdaPay</field>
+            <field name="code">adapay</field>
+            <field name="redirect_form_view_id" ref="redirect_form"/>
+            <field name="image_128" type="base64" file="payment_adapay/static/description/icon.png"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="module_id" ref="base.module_payment_adapay"/>
+             <field name="payment_method_ids"
+               eval="[Command.set([
+                         ref('payment_adapay.payment_method_adapay'),
+                     ])]"
+        />
+        </record>
+    </data>
+</odoo>
